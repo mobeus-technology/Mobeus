@@ -1,0 +1,695 @@
+
+@import 'variables.scss';
+@import 'slick.scss';
+@import 'slider.scss';
+
+%typos {
+	background-size: auto 100%;
+	background-attachment: fixed;
+	background-position: calc((100% - 950px) / 2) center;
+	background-repeat: no-repeat;
+}
+
+.main-container{
+		
+	header{
+		padding: .5em 1em;
+		height: auto;
+		z-index: 9999;
+		background: transparent;
+		position: fixed;
+		top: 0;
+		left: 0;
+		will-change:transform;
+
+		.logo{
+			max-width: 80px;
+			padding: .5em;
+			flex: 0 1 80px;
+			z-index: 0;
+			cursor: pointer;
+		}
+
+		.menu{
+			flex: 1 1 auto;
+
+			.enlace{
+				flex: 0 1 auto;
+				color: white;
+				padding:.5em 1em;
+				cursor: pointer;
+				
+			}
+		}
+
+		.contact{
+			flex: 0 1 350px;
+			z-index: 0;
+			.phone{
+				color: white;
+				img{
+					display: inline;
+					width: 30px;
+					margin-right: .5em;
+				}
+			}
+			.letter{
+				cursor: pointer;
+				width: 30px;
+				margin-left: 2em;
+			}
+		}
+	}
+
+	.h-in{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,131313+100 */
+background: rgb(76,76,76); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 */
+		transform:translateY(0);
+		opacity: 1;
+	}
+	.h-out{
+		background-color:#444444; 
+		transform:translateY(-100%);
+		opacity: 0;
+	}
+
+	.content{
+
+		// .menu{
+		// 	display: none;
+		// 	width: 50px;
+		// 	position: fixed;
+		// 	right: 1em;
+		// 	border-radius: 25px;
+		// 	top: calc(50% - 150px);
+		// 	z-index: 9;
+		// 	padding: .5em;
+		// 	background: rgba(0,0,0,.3);
+		
+
+		// 	.link{
+		// 		width: 50px;
+		// 		height: 50px;
+		// 		border-radius: 50%;
+		// 		padding: .5em;
+		// 		margin-bottom: .5em;
+		// 		cursor: pointer;
+		// 		text-align: center;
+		// 		color: white;
+		// 		@extend %tr;
+		// 		transform:scale(1);
+
+		// 		&:hover{
+		// 			transform:scale(1.2);
+		// 		}
+		// 	}
+
+		// 	.language{
+		// 		border:2px solid white;
+		// 		border-radius: 50%;
+		// 		width: 40px;
+		// 		height: 40px;
+		// 		line-height: 22px;
+		// 	}
+		// }
+
+		.s01{
+			background-image: url(img/inicio.png);
+			background-attachment: fixed;
+			margin-bottom: -100px;
+			overflow: hidden;
+			
+			.cont-logo{
+				position: relative;
+			}
+
+			.lineas{
+				background-image: url(img/lineas-inicio.png);
+				background-size: auto 100%;
+				opacity: .15;
+			}
+
+			.mw{
+				min-height: calc(100vh - 50px);
+				padding: 0 1em;
+				.cont-logo{
+					position: relative;
+					width: 70%;
+					max-width: 450px;
+				}
+
+				.texto{
+					position: relative;
+					h2{
+						font-size: 1.5em;
+						margin:0;
+						font-weight: 300;
+					
+						span{
+							margin-right: 1em; 
+							display: inline-block;
+						}
+
+						button{
+						width: 150px;
+						margin-top: .5em;
+						}
+					}
+				}
+			}
+		}
+
+		.s02{
+			z-index: 2;
+			margin: 0 0 -2em;
+			padding: 0 .5em;
+
+			.texto{
+					position: relative;
+					text-align: center;
+					line-height: 2em;
+					font-size: .6em;
+					h1{
+					color: white;
+					font-weight: 300!important;
+					margin: 0 0 2em;
+					text-shadow:0 1px 10px rgba(0,0,0,.5);
+					}
+				}
+
+			.cont-slider{
+				width: 100%;
+				overflow: hidden;
+				margin: auto;
+				position: relative;
+				border-bottom: 5px solid #e4e4e4;
+				border-top: 5px solid #e4e4e4;
+				background: #e4e4e4;
+
+				&:hover .left-a{
+					left: 0;
+				}
+
+
+				&:hover .right-a{
+					right: 0;
+				}
+
+				.left-a,.right-a{
+					position: absolute;
+					top: 0;
+					padding: 1em;
+					background: rgba(0,0,0,.1);
+					height: 100%;
+					width: 5%;
+					z-index: 10;
+					cursor: pointer;
+					@extend %tr;
+
+					&:hover{
+						background: rgba(0,0,0,.5);
+					}
+
+					img{
+						opacity: .7;
+					}
+				}
+
+				.left-a{
+					left: -5%;
+				}
+
+				.right-a{
+					right: -5%;
+				}
+				.slider{
+					position: relative;	
+					margin-bottom: 0;
+					
+
+					.slide{
+						max-width: 500px;
+						width: 100%;
+						position: relative;
+						z-index: 0;
+						margin-right:2px;
+				
+
+
+						.name{
+							z-index: 2;
+							padding: 1em;
+							height: auto;
+							top: auto;
+							bottom: 0;
+
+							h3{
+								font-size:1em;
+								padding-top: .5em;
+								width: 100%;
+								border-top:1px solid #999999;
+							}
+							small{
+								margin-bottom:1em; 
+							}			
+						}
+					}
+
+					.slick-dots {
+						display: none!important;
+					}
+				}
+			}
+		}
+
+		.s03{
+			.mw{
+				background-image: url(img/typos.svg);
+				@extend %typos;
+				padding:50px 1em; 
+				min-height: 100vh;
+				
+
+				.titulo{
+					text-align: center;
+					margin-bottom: 2em;
+					.icono{
+						max-width: 100px;
+						margin: auto;
+						margin-bottom: 1em;
+					}
+					h1{
+						font-weight: 400;
+						font-size: 1.3em;
+					}
+				}
+
+				.servicios{
+					.servicio{
+						padding: 1em;
+						width: 350px;
+						flex: 1 1 250px;
+						margin:.8em;
+						text-align: center;
+
+						.icon{
+							width: 80%;
+							max-width: 150px;
+							margin:0 auto 1em;
+						}
+					}
+				}
+			}
+		}
+
+		.s04{
+			position:relative;
+			background: #e4e4e4;
+			overflow: visible;
+			padding: 3em .5em .5em;
+
+			.titulo{
+				border-radius: 30px;
+				border:4px solid #e4e4e4;
+				background: white;
+				position: absolute;
+				top: 0;
+				left:50%;
+				transform:translate(-50%, -50%); 
+				z-index: 10;
+				padding: 0 2em;
+				width: 90%;
+				max-width: 600px;
+				text-align: center; 
+
+				h1{
+					line-height:40px;
+					font-weight: 300;
+					
+					font-size: .9em;			}
+			}
+
+			.slider2{
+				.slide{
+					padding: 0 1em;
+					img{
+						height: auto;
+						max-width:150px;
+						margin: auto;
+					}
+				}
+			}
+		}
+
+		.s05{
+			background-image: url(img/foto-dos.png);
+			background-attachment: fixed;
+
+			.mw{
+				padding: 50px .5em;
+				position: relative;
+				background-image: url(img/typos-line.svg);
+				@extend %typos;
+				min-height: 80vh;
+
+				.cont-logo,.texto{
+					width: 300px;
+					padding: 1em;
+					flex: 1 1 300px;
+				}
+
+				.cont-logo{
+					position: relative;
+					.logo{
+						width: 60%;
+						max-width: 450px;
+						margin: auto;
+					}
+				}
+
+				.texto{
+					position: relative;
+					p{
+						margin-bottom: 1em;
+						line-height: 1.5em;
+						font-size: 1em;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+
+		.s06 {
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#359853+1,1973b5+100 */
+			background: rgb(53,152,83); /* Old browsers */
+			background: -moz-linear-gradient(left, rgba(53,152,83,1) 1%, rgba(25,115,181,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, rgba(53,152,83,1) 1%,rgba(25,115,181,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, rgba(53,152,83,1) 1%,rgba(25,115,181,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#359853', endColorstr='#1973b5',GradientType=1 ); /* IE6-9 */
+
+			.mapa{
+				background-image: url(img/mapaMundi.png);
+				opacity: .3;
+				max-width: 1280px;
+				margin: auto;
+				left: 50%;
+				transform:translateX(-50%);
+				background-size: 100% auto;
+			}
+			.mw{
+				min-height:50vh;
+				padding: 50px 1em; 
+				.titulo{
+					text-align: center;
+					margin-bottom: 2em;
+					.icono{
+						max-width: 100px;
+						margin: auto;
+						margin-bottom: 1em;
+					}
+					h1{
+						font-weight: 400;
+						font-size: 1em;
+					}
+					small{
+						display: block;
+						width: 80%;
+						max-width: 900px;
+						margin:1em auto 0;
+						line-height: 1.5em;
+					}
+				}
+
+				.formulario,.texto{
+					flex:1 1 300px;
+					align-content:center;
+				}
+
+				.formulario{
+					transform:translateZ(0);
+					z-index: 0;
+
+					form{
+						max-width: 500px;
+						margin: auto;
+						
+						.campo{
+							margin-bottom: .5em;
+							width: 100%;
+
+							label{
+								display: block;
+								width: 100%;
+								color: white;
+								text-shadow:0 1px 5px rgba(0,0,0,.5);
+								margin-bottom: .3em;
+							}
+
+							input,textarea{
+								width: 100%;
+								cursor: pointer;
+								max-height: 150px;
+								font-size: 1.3em;
+								resize:none;
+
+								&:hover,&:focus{
+									background: rgba(0,0,0,.2);
+								}
+							}
+							.error{
+								color: #dbff08;
+								margin-top: .3em;
+							}
+						}
+
+						button{
+							width: 200px;
+							z-index: 1;
+							transform:translateZ(none);
+							max-height: 45px;
+						}
+					}
+				}
+
+				.texto{
+					color: white;
+					padding: 2em;
+					z-index: 0;
+					transform:translateZ(0);
+
+					h3,p{
+						max-width: 500px;
+						margin: auto;
+					}
+
+					p{
+						margin:.5em auto 2em;
+					}
+
+					.redes{
+						max-width: 500px;
+						margin:2em auto 0;
+						h3{margin-bottom: 1em;}
+
+						a{
+							display: block;
+							margin-right: .5em;
+							flex: 0 0 40px;
+
+						}
+					}
+				}	
+			}
+		}
+
+		footer{
+			background: #444444;
+			padding: 1em;
+			color: #f1f1f1;
+			transform:translateZ(0);
+			z-index: 0;
+		}
+	}
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media all and (min-width: 576px) {
+
+	.main-container{
+		.content{
+			.s01{
+				.mw{
+					.texto{
+						h2{
+							font-size:1.5em;
+							font-weight: 300;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media all and (min-width: 768px) {
+	.main-container{
+		.content{
+			.s01{
+
+				margin:0 0 -200px; 
+
+				.texto{
+					h2{
+						button{
+							font-size: .5em;
+						}
+					}
+				}
+			}
+
+			.s02{
+
+				.texto{
+					font-size: .8em;
+				}
+			}
+
+			.s03{
+				.mw{
+					padding: 100px 1em;
+
+					.titulo{
+						h1{
+							font-size: 1.5em;
+						}
+					}
+				}
+			}
+
+			.s04{
+				.titulo{
+					h1{
+						font-size: 1.5em;
+						line-height: 2em;
+					}
+				}
+			}
+
+			.s05{
+				.mw{
+					.texto{
+						p{
+							line-height: 1.5em;
+							font-size: 1.2em;
+						}
+					}
+				}
+			}
+
+			.s06{
+				.mw{
+
+					.titulo{
+						h1{
+							font-size: 1.5em;
+						}
+					}
+					
+					.formulario{
+						padding: 2em;
+					}
+
+					.texto{
+						padding: 2em;
+
+						.redes{
+							margin: 3em auto 0;
+						}
+					}
+
+					.slider2{
+						.slide{
+							img{
+								max-width: 250px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media all and (min-width: 992px) {
+
+
+	.main-container{
+		.content{
+			.menu{
+				right: 50px;
+			}
+
+			.s06{
+				padding: 50px 1em;
+			}
+		}
+	}
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media all and (min-width: 1200px) {
+	.main-container{
+
+		header{
+			height: auto;
+
+			.contact{
+				.letter{
+					margin-right: .5em;
+				}
+			}
+		}
+
+		.content{
+			.s01{
+				.lineas{
+					background-size: 100% 100%;
+				}
+				
+			}
+		}
+	}
+	
+}
+
+@media all and (min-width: 1350px) {
+	.main-container{
+
+		.content{
+			.menu{
+				right: calc(((100% - 1200px)/2 - 100px);
+			}
+
+			.s01{
+				background-size: 100% 100%;
+			}
+
+			.s03{
+				.mw{
+					padding: 200px 0;
+				}
+			}
+		}
+	}
+}
+
