@@ -2,7 +2,7 @@
 var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -17,9 +17,14 @@ module.exports = (env, args) => {
   	  entry: './src/app.js',
 	  output: {
 	    path: path.resolve(__dirname, './dist'),
-	    filename: 'bundle.[hash].js',
+	    filename: 'bundle.[hash:4].js',
 	    publicPath: '/'
 	  },
+
+       performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+  },
 
 	  devServer: {
 	    contentBase: path.join(__dirname, '/dist'),
@@ -76,8 +81,8 @@ module.exports = (env, args) => {
 		}),
 
 		 new MiniCssExtractPlugin({
-                filename: devMode ? "[name].css" : "[name].[hash].css",
-                chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
+                filename: devMode ? "[name].css" : "[name].[hash:4].css",
+                chunkFilename: devMode ? "[id].css" : "[id].[hash:4].css"
             }),
 
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +31,8 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "jquery": "^3.3.1",
-    "webpack-dev-server": "^3.1.5"
+    "scrollreveal": "^4.0.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-php-loader": "^0.5.0"
   }
 }

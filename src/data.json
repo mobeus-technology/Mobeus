@@ -1,0 +1,79 @@
+{
+   "microBrasil":{
+ 	"titulo":"Micro Fidelio Brasil",
+ 	"img":"img/micro-br.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	 "microCostaRica":{
+ 	"titulo":"Micro Fidelio Costa Rica",
+ 	"img":"img/micro-cr.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	 "microMexico":{
+ 	"titulo":"Micro Fidelio México",
+ 	"img":"img/micro-bmx.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	  "microArgentina":{
+ 	"titulo":"Micro Fidelio Argentina",
+ 	"img":"img/micro-ivves.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	  "ivessJ":{
+ 	"titulo":"IVESS Jayregui",
+ 	"img":"img/ivves.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	  "ivessJumillano":{
+ 	"titulo":"IVESS Jumillano",
+ 	"img":"img/ivves.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+ 	  "ivessRosmino":{
+ 	"titulo":"IVESS Rosmino",
+ 	"img":"img/ivves.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 }, 
+ 	  "fullcar":{
+ 	"titulo":"Full Car",
+ 	"img":"img/fullCar.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+  "cafemartinez":{
+ 	"titulo":"Café Martinez",
+ 	"img":"img/cafe.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+  "sides":{
+ 	"titulo":"SIDES",
+ 	"img":"img/sides.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 },
+  "oracle":{
+ 	"titulo":"Oracle Micros",
+ 	"img":"img/oracle.jpg",
+ 	"tecnologias":["Android","Hrml5","Java"],
+ 	"fecha":"5 de julio 2017",
+ 	"descripccion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus aliquam voluptatum eligendi, corporis asperiores aliquid eum commodi blanditiis numquam laboriosam. A quam, mollitia possimus cupiditate quos! Laboriosam vel, ex sapiente."	
+ 	 }
+}

@@ -3,9 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Somo una empresa de software que esta formada por ingenieros con más de 10 años de experiencia en el ámbito privado. Desarrollamos soluciones utilizando metodología agiles dando prioridad a la entrega temprana y continua del software para el cliente."/>
+	<meta name="description" content="Somos una empresa de software que esta formada por ingenieros con más de 10 años de experiencia en el ámbito privado. Desarrollamos soluciones utilizando metodología agiles dando prioridad a la entrega temprana y continua del software para el cliente."/>
 
-	<title><%= htmlWebpackPlugin.options.title %></title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#444444">
+	<meta name="msapplication-TileColor" content="#171717">
+	<meta name="theme-color" content="#444444">
+
+	<meta property="og:url" content="http://mobeus.com.ar/" />
+	<meta property="og:type"               content="website" />
+	<meta property="og:title"              content="Mobeus" />
+	<meta property="og:description"        content="Somos una empresa de software que esta formada por ingenieros con más de 10 años de experiencia en el ámbito privado. Desarrollamos soluciones utilizando metodología agiles dando prioridad a la entrega temprana y continua del software para el cliente." />
+	<meta property="og:image"              content="http://mobeus.com.ar/portadaDos.jpg" />
+
+	<title>:: Mobeus ::</title>
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,500" rel="stylesheet">
 
@@ -14,19 +28,19 @@
 	<div class="main-container">
 		<header class="wc bgb tr">
 			<div class="mw f01 jcsb ">
-				<div class="logo ">
+				<div class="logo " onclick="$('.s01').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">
 					<img src="img/logo.png" alt="" class="imgr ll">
 				</div>
-				<div class="menu f01 jcfs">
+				<div class="menu f01 jcfs tr">
 					<div class="enlace lb">
-						<span class="es">Servicios</span>
+						<span class="es" onclick="$('.s03').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">Servicios</span>
 						<span class="en">Services</span>
 					</div>
-					<div class="enlace la">
+					<div class="enlace la" onclick="$('.s02').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">
 						<span class="es">Portafolio</span>
 						<span class="en">Portfolio</span>
 					</div>
-					<div class="enlace lc">
+					<div class="enlace lc" onclick="$('.s05').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">
 						<span class="es">Nosotros</span>
 						<span class="en">About us</span>
 					</div>
@@ -34,20 +48,25 @@
 						<span class="es">English</span>
 						<span class="en">Español</span>
 					</div>
+
+					<div class="hide">
+						<img src="img/left-arrow.png" alt="" class="imgr">
+					</div>
 				</div>
 				<div class="contact f01 jcfe">
 					<div class="phone f01">
 						<img src="img/call.png" alt="" class="">
-						<p><span class="es">¡Danos un ring!</span><span class="en">Give us a call!</span> +53 856 99 88</p>
+						<p><span class="es danos">¡Danos un ring!</span> <span class="en danos">Give us a call!</span> +53 856 99 88</p>
 					</div>
-					<div class="letter ld">
+					<button class="letter ld" onclick="$('.s06').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">
 						<img src="img/email.png" alt="" class="imgr">
-					</div>
-					<div class="menu-bar">
-						<img src="" alt="">
-					</div>
+					</button>
+					<button class="menu-bar">
+						<img src="img/menu.png" alt="" class="imgr">
+					</button>
 
 				</div>
+
 			</div>
 		</header>
 		<div class="menu-movil">
@@ -64,114 +83,120 @@
 			</div> -->
 			
 			<!-- inicio	 -->
-			<section class="hvh  s01 imgb">
+			<section class="  s01 imgb">
 				<div class="pa imgb deg" ></div>
 				<div class="lineas pa imgb"></div>
 				
 		
 				<div class="mw f02 algfs">
 					<div class="cont-logo">
-						<img src="img/logo-blanco.png" alt="" class="imgr">
+						<img src="img/logo-b.svg" alt="" class="imgr">
 					</div>
 					<div class="texto cb f01 jcfs">
 						<h2>
 							<span class="es">Soluciones Duraderas</span>
 							<span class="en">Long-lasting Solutions</span>
-							<button class="  btn-solid lb">
+							<button class="  btn-solid lb" onclick="$('.s03').animatescroll({element:'.main-container',scrollSpeed:1000,easing:'easeInOutQuad'});">
 								<span class="es">Ver más</span>
 								<span class="en">See more</span>
 							</button>
 						</h2>
+					</div>
+
+
+					<div class="roll-down f01">
+						<div class="circulo" onclick="$('.s02').animatescroll({element:'.main-container',scrollSpeed:600,easing:'easeOutQuad'});">
+							<div class="punto"></div>
+						</div>
 					</div>				
 				</div>
 			</section>
-			<section class="s02">
-				<div class="mw">
+			<section class="s02 ">
+				<div class="mw ">
 					<div class="texto wc f01">
 						<h1 class=""> 
 							<span class="es">Conócenos por Nuestro Trabajo</span>
 							<span class="en">Know us for our Work</span>
 						</h1>
 					</div>
-				</div>
+					<div class="cont-slider">
+						<div class="left-a f02">
+							<img src="img/left.svg" alt="" class="imgr">
+						</div>
+						<div class="right-a f02">
+							<img src="img/right.svg" alt="" class="imgr">
+						</div>
 
-				<div class="cont-slider">
-					<div class="left-a f02">
-						<img src="img/left.svg" alt="" class="imgr">
-					</div>
-					<div class="right-a f02">
-						<img src="img/right.svg" alt="" class="imgr">
-					</div>
+						<div class="slider">
 
-					<div class="slider">
-
-						<div class="slide ">
-							<img src="img/oracle.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Oracle-Micros</h3>
+							<div class="slide " data="oracle">
+								<img src="img/oracle.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Oracle-Micros</h3>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/micro-arg.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Micros-Fidelio</h3> <small>Argentina</small>
+							<div class="slide " data="microArgentina">
+								<img src="img/micro-arg.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Micros-Fidelio</h3> <small>Argentina</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/micro-br.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Micros-Fidelio</h3> <small>Brasil</small>
+							<div class="slide " data="microBrasil">
+								<img src="img/micro-br.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Micros-Fidelio</h3> <small>Brasil</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/micro-cr.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Micros-Fidelio</h3> <small>Puerto Rico</small>
+							<div class="slide " data="microCostaRica">
+								<img src="img/micro-cr.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Micros-Fidelio</h3> <small>Costa Rica</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/micro-mx.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Micros-Fidelio</h3> <small>México</small>
+							<div class="slide " data="microMexico">
+								<img src="img/micro-mx.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Micros-Fidelio</h3> <small>México</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/ivves.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Ivess </h3>
-								<small>Jaureguy</small>
+							<div class="slide " data="ivessJ">
+								<img src="img/ivves.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Ivess </h3>
+									<small>Jaureguy</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/ivves.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Ivess   </h3>
-								<small>El Jumillano</small>
+							<div class="slide " data="ivessJumillano">
+								<img src="img/ivves.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Ivess   </h3>
+									<small>El Jumillano</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/ivves.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Ivess </h3>
-								<small>Rosmino</small>
+							<div class="slide " data="ivessRosmino">
+								<img src="img/ivves.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Ivess </h3>
+									<small>Rosmino</small>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/fullCar.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Full car </h3>
+							<div class="slide " data="fullcar">
+								<img src="img/fullCar.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Full car </h3>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/cafe.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>Café Martinez </h3>
+							<div class="slide " data="cafemartinez">
+								<img src="img/cafe.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>Café Martinez </h3>
+								</div>
 							</div>
-						</div>
-						<div class="slide ">
-							<img src="img/sides.jpg" alt="" class="imgr">
-							<div class="name pa p1 f02 algfs jcfe">
-								<h3>SIDES</h3>
+							<div class="slide " data="sides">
+								<img src="img/sides.jpg" alt="" class="imgr">
+								<div class="name pa p1 f02 algfs jcfe">
+									<h3>SIDES</h3>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -205,27 +230,33 @@
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/invoice.png" alt="" class="imgr"></div>
-							<h3>Factura Electrónica AFIP</h3>
+							<h3 class="es">Factura Electrónica AFIP</h3>
+							<h3 class="en">AFIP Electronic Invoice</h3>
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/map.png" alt="" class="imgr"></div>
-							<h3>Sistemas de Trazabilidad Con Integración Google Maps</h3>
+							<h3 class="es">Sistemas de Trazabilidad Con Integración Google Maps</h3>
+							<h3 class="en">Traceability Systems With Google Maps Integration</h3>
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/intersection.png" alt="" class="imgr"></div>
-							<h3>Integración de Sistemas</h3>
+							<h3 class="es">Integración de Sistemas</h3>
+							<h3 class="en">System integration</h3>
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/excel.png" alt="" class="imgr"></div>
-							<h3>Desarrollos en Exel para Automatización de Tareas</h3>
+							<h3 class="es">Desarrollos en Exel para Automatización de Tareas</h3>
+							<h3 class="en">Developments in Exel for Task Automation</h3>
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/online-store.png" alt="" class="imgr"></div>
-							<h3>Desarrollos de Sistemas de Gestión Comercial ( Ventas, Cobranzas, Pagos, Compras).</h3>
+							<h3 class="es">Desarrollos de Sistemas de Gestión Comercial ( Ventas, Cobranzas, Pagos, Compras).</h3>
+							<h3 class="en">Development of Commercial Management Systems (Sales, Collections, Payments, Purchases).</h3>
 						</div>
 						<div class="servicio ">
 							<div class="icon"><img src="img/intersectionN.png" alt="" class="imgr"></div>
-							<h3>Integración con Aplicaciones AFIP</h3>
+							<h3 class="es">Integración con Aplicaciones AFIP</h3>
+							<h3 class="en">Integration with AFIP Applications</h3>
 						</div>
 					</div>
 				</div>
@@ -247,6 +278,7 @@
 					<div class="slide"><img src="img/tecnologias/vaadin.png" alt="" class=""></div>
 				</div>
 			</section>
+
 			<section class="s05 imgb">
 				<div class="sombra pa"></div>
 				<div class="mw f01">
@@ -289,8 +321,8 @@
 							</p>
 					</div>
 				</div>
-				
 			</section>
+
 			<section class="s06">
 				<div class="pa imgb mapa"></div>
 				<div class="mw f01">
@@ -319,7 +351,7 @@
 						<form action="" autocomplete="off">
 							<div class="campo">
 								<label for=""><span class="es">Nombre</span><span class="en">Name</span></label>
-								<input type="text" name="name" autocomplete="off" id="nombre"> 
+								<input type="text" name="nombre" autocomplete="off" id="nombre"> 
 								<div class="error">
 									<span class="es">
 										Debes escribir un nombre
@@ -360,7 +392,7 @@
 									<span class="es">Comentarios</span>
 									<span class="en">Coments</span>
 								</label>
-								<textarea name="coments" id="" cols="30" rows="5" id="comentarios"></textarea>
+								<textarea name="coments" id="" cols="30" rows="5" id="coments"></textarea>
 								<div class="error">
 									<span class="es">
 										Debes ingresar mínimo 20 caracteres 									
@@ -371,10 +403,13 @@
 								</div>
 							</div>
 
-							<button class="btn-solid"  id="send-email"> 
+							<button class="btn-solid"  id="send-email" disabled > 
 								<span class="es">Enviar</span>
 								<span class="en">Send</span>
 							</button>
+							<div class="success">
+								¡Mensaje enviado con éxito!
+							</div>
 						</form>
 					</div>
 					<div class="texto cb">
@@ -400,7 +435,6 @@
 							<h3 class="wc">
 								<span class="es">Somos Sociales</span>
 								<span class="en"> We are socials</span>
-								
 							</h3>
 							<br>
 							<a href=""><img src="img/redes/facebook.png" alt="" class="imgr"></a>
@@ -425,6 +459,45 @@
 					</div>
 				</div>
 			</footer>	
+		</div>
+	</div>
+	<div class="modal pa f02 tr dn">
+
+		<div class="ventana f02 jcfs dn">
+			<div class="titulo f01 ">
+				<h3 id="titulo-pro">Mobeus argentina</h3>
+				<div class="close">
+					<img src="img/close.png" alt="" class="imgr" >
+				</div>
+			</div>
+			<div class="container f01 algs ">
+				<div class="aside">
+					<div class="foto wc">
+						<img alt="" class="imgr" id="img-pro">
+					</div>
+					<div class="detalles">
+
+						<small>
+							<span class="es">Tecnologías Implementadas:</span>
+							<span class="en">Implemented technologies</span>
+						</small>
+						<p id="tecnologias"></p>
+					
+						<strong class="es"> Entregado: </strong>
+						<br>
+						<span class="es"></span>
+
+						<strong class="en"> Delivered: </strong>
+						<br>
+						<span class="en"></span>
+
+					</div>
+				</div>
+				<div class="content ">
+					<p id="description"></p>
+					<a href="Mobeus.com.ar">Mobeus.com.ar</a>
+				</div>
+			</div>	
 		</div>
 	</div>
 </body>

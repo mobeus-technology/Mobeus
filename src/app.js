@@ -1,20 +1,251 @@
 const css = require('./main.scss')
 import $ from "jquery";
+import jquery from "./js/jquery.js";
+import  "./js/animatescroll.js";
+import  "./js/animatescroll.noeasing.js";
 import './js/slick.min.js';
+import Data from'./data.js';
+import ScrollReveal from 'scrollreveal';
 
-var correo = $("#correo"),
-	nombre = $("#nombre"),
-	asunto= $("#asunto"),
-	comentarios = $("#comentarios"),
-	sActual = 0;
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
+var transitionEvent = whichTransitionEvent();
+
+function whichAnimationEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var animations = {
+    "animation"      : "animationend",
+    "OAnimation"     : "oAnimationEnd",
+    "MozAnimation"   : "animationend",
+    "WebkitAnimation": "webkitAnimationEnd"
+  }
+
+  for (t in animations){
+    if (el.style[t] !== undefined){
+      return animations[t];
+    }
+  }
+}
 
 
 
-$(document).ready(()=>{
+var animationEvent = whichAnimationEvent();
+
+
+var correo = $("#correo").val(),
+	nombre = $("#nombre").val(),
+	asunto = $("#asunto").val(),
+	coments = $("#coments").val(),
+	sActual = 0,
+	correoValido = false,
+	nombreValido = false,
+	comentsValido = false,
+	asuntoValido = false;
+	asuntoValido = false;
+
+var alexis = 'puto';
+
+var validaCampoBlur = (campo) => {
+	campo.blur(()=>{
+		if(campo.val()==''){
+			campo.siblings('.error').slideDown();
+		}
+	})
+}
+
+
+
+
+
+
+$(document).ready(()=>{	
+
+	$('.slide').click(function(e){
+
+		// var dataActive = $(e).target.attr('data');
+		var dataActive = $(this).attr('data')
+		var imgm = $(this).find('img').attr('src')
+
+		$('.modal')
+		.removeClass('dn')
+		setTimeout(function(){
+			$('.modal').addClass('op')
+		.on(transitionEvent,function(){
+		$('.modal .ventana').removeClass('dn').addClass('scale')
+			$('.modal').off(transitionEvent)
+		})
+
+		},100)
+		
+		$('.modal .ventana').on(animationEvent,function(){
+		$(this).removeClass('scale').off(animationEvent);			
+		})
+
+		$("#description").html(Data[dataActive].description);
+		$("#titulo-pro").html(Data[dataActive].titulo);
+		$("#img-pro").attr('src', imgm );
+
+		console.log( Data[dataActive].img )
+
+		$("#tecnologias").html('')
+		for(var i=0; i<Data[dataActive].tecnologias.length; i++){
+			$("#tecnologias").append("<span>"+ Data[dataActive].tecnologias[i]+"</span>, ")
+		}
+
+	})
+
+	$('.close').click(function(){
+		$('.modal .ventana').addClass('scale-off').on(animationEvent, function(){
+			$('.modal').removeClass('op')
+			$(this).removeClass('scale-off').off(animationEvent).addClass('dn')
+
+		})
+		$('.modal').on(transitionEvent,function(){
+			$(this).addClass('dn').off(transitionEvent)
+
+		})
+	})
+
+
+	function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+	}
+
+	$('#correo').keyup(function(){
+		if(validateEmail($('#correo').val())){
+			$('#correo').next('.error').slideUp();
+			correoValido= true;
+			if( asuntoValido && nombreValido && comentsValido){
+				$("#send-email").removeAttr('disabled')
+			}
+		}else{
+			correoValido= false;
+		}
+	})
+
+	$('#correo').blur(function(){
+		if(!validateEmail($('#correo').val())){
+			$('#correo').next('.error').slideDown();
+		}
+	})
+
+	$('#nombre,#asunto').blur(function(){
+		if($(this).val().length<2){
+			$(this).next('.error').slideDown()
+		}
+	})
+
+	$('textarea').blur(function(){
+		if($(this).val().length<20){
+			$(this).next('.error').slideDown()
+		}
+	})
+
+
+
+	$('#nombre,#asunto').keyup(function(){
+
+		if($('#nombre').val().length>1){
+			nombreValido = true;
+			$(this).next('.error').slideUp()
+		}else{
+			nombreValido = false;
+		}
+
+		if($('#asunto').val().length>1){
+			asuntoValido = true;
+			$(this).next('.error').slideUp()
+		}else{
+			asuntoValido = false;
+		}
+
+		if( correoValido && asuntoValido && nombreValido && comentsValido){
+			$("#send-email").removeAttr('disabled')
+		}
+	})
+
+		$('textarea').keyup(function(){
+			if($('textarea').val().length>19){
+				comentsValido = true;
+				$('textarea').next('.error').slideUp()
+				
+				if( correoValido && asuntoValido && nombreValido && comentsValido){
+					$("#send-email").removeAttr('disabled')
+				}
+			}
+		})
+
+	ScrollReveal().reveal('.servicio , .s03 .titulo, .s06 h1,.s06 small',
+		{ 
+		 container: '.main-container',
+		 distance: '100px'
+		  });
+
+		ScrollReveal().reveal('.slider ',
+		{ 
+		 container: '.main-container',
+		 distance: '100px'
+		  });
+
+	ScrollReveal().reveal('.s03 .icono, .s06 .icono',
+		{ 
+		 container: '.main-container',
+		 scale:.5
+		  });
+
+	ScrollReveal().reveal('.s04 .titulo', 
+		{ 
+		 container: '.main-container',
+		 distance: '50px',
+		 opacity:0,
+		 origin:'top'
+		  });
+
+	ScrollReveal().reveal('.s05 .logo, .s06 .formulario', 
+		{ 
+		 container: '.main-container',
+		 delay: 600,
+		 distance: '100px',
+		 opacity:0,
+		 origin:'left'
+		  });
+
+	ScrollReveal().reveal('.s05 .texto, .s06 .texto', 
+		{ 
+		 container: '.main-container',
+		 delay: 600,
+		 distance: '100px',
+		 opacity:0,
+		 origin:'right'
+		  });
+
+
+
+	$('.menu-bar').click(function(){$('.menu').addClass('out')})
+	$('.hide,.enlace').click(function(){$('.menu').removeClass('out')})
 
 	$('span.en').addClass('dn');
 
-	$('.error').slideUp(0)
+	$('.error, .success').slideUp(0)
 
 	$('.slider').slick({
 	  dots: true,
@@ -101,24 +332,18 @@ $(document).ready(()=>{
     	$(".slider").slick('slickPrev');
 	});
 
-	var pos = parseInt($('.s05').offset().top);
-	var pos1 = parseInt($('.s01').offset().top);
-	var pos2 = parseInt($('.s02').offset().top);
-	var pos3 = parseInt($('.s03 .mw').offset().top);
-	var pos4 = parseInt($('.s05').offset().top);
-	var pos5 = parseInt($('.s06').offset().top);
-
 
 	$(".main-container").on('scroll', function(){
 
-
 		var suma = $(".main-container").scrollTop();
-		// $('.lineas').css('top', ( suma / 2.2))
-		$('.s01 .cont-logo').css('top', ( suma / 2.5))
-		$('.s01 .lineas').css('top', ( suma / 1.5))
-		$('.s01 .cont-logo').next('.texto').css('top', ( suma / 2.5))
-	
 
+		if($(window).width()>767){
+					// $('.lineas').css('top', ( suma / 2.2))
+			$('.s01 .cont-logo').css('top', ( suma / 2.5))
+			$('.s01 .lineas').css('top', ( suma / 1.5))
+			$('.s01 .cont-logo').next('.texto').css('top', ( suma / 2.5))
+		}
+	
 		if(suma > sActual ){
 			$('header').addClass('h-out').removeClass('h-in')
 		}else{
@@ -129,89 +354,49 @@ $(document).ready(()=>{
 		}
 
 		sActual = suma;
-
-
 	})
 
-	$('.ll').click(() => {
-		$('.main-container').animate({scrollTop: pos1},600)
+	$('#send-email').click(function(event){
+		event.preventDefault();
+
+
+		$(this).addClass('loading').text('').attr('disabled',true)
+
+		var data = {
+	    correo:$("#correo").val(),
+		nombre:$("#nombre").val(),
+		asunto: $("#asunto").val(),
+		comentarios: $("textarea").val()
+	};
+
+
+		console.log(data)
+
+			$.ajax({
+			    type: "POST",
+			    url: "email.php",
+			    data: data,
+			    success: function(){
+			     $('#send-email').removeClass('loading').text('Enviar')
+			     
+			     $("#correo").val('')
+				 $("#nombre").val('')
+				 $("#asunto").val('')
+				 $("textarea").val('')	
+
+				 $('.success').slideDown()
+
+				 setTimeout(function(){
+					$('.success').slideUp()					 	
+				 },6000)
+			    }
+			});
 	})
 
-
-	$('.la').click(() => {
-		$('.main-container').animate({scrollTop: pos2},600)
+	$('.language').click(()=>{
+		$('.en').toggleClass('dn')
+		$('.es').toggleClass('dn')
 	})
-	$('.lb').click(() => {
-		$('.main-container').animate({scrollTop: pos3},600)
-	})
-	$('.lc').click(() => {
-		$('.main-container').animate({scrollTop: pos4},600)
-	})
-
-	$('.ld').click(() => {
-		$('.main-container').animate({scrollTop: pos5},600)
-	})
-
-	
-
-
-		correo.keyup(()=>{
-			if(correo.val() !== ''){
-				correo.next('.error').slideUp()
-			}
-		})
-
-		correo.blur(()=>{
-			if(correo.val() === ''){
-				correo.next('.error').slideDown()
-			}
-		})
-
-		nombre.keyup(()=>{
-			if(nombre.val() !== ''){
-				nombre.next('.error').slideUp()
-			}
-		})
-
-		nombre.blur(()=>{
-			if(nombre.val() === ''){
-				nombre.next('.error').slideDown()
-			}
-		})
-
-		comentarios.keyup(()=>{
-			if(comentarios.val() !== ''){
-				comentarios.next('.error').slideUp()
-			}
-		})
-
-		comentarios.blur(()=>{
-			if(comentarios.val() === ''){
-				comentarios.next('.error').slideDown()
-			}
-		})
-
-		asunto.keyup(()=>{
-			if(asunto.val() !== ''){
-				asunto.next('.error').slideUp()
-			}
-		})
-
-		asunto.blur(()=>{
-			if(asunto.val() === ''){
-				asunto.next('.error').slideDown()
-			}
-		})
-
-		$('#send-email').click(function(event){
-			event.preventDefault();
-			$(this).addClass('loading').text('').attr('disabled',true)
-		})
-
-		$('.language').click(()=>{
-			$('.en').toggleClass('dn')
-			$('.es').toggleClass('dn')
-		})
 
 
 
